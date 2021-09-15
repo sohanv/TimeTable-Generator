@@ -2,7 +2,7 @@ from PIL import Image, ImageFont, ImageDraw
 
 def gen_img(table):
     img = Image.open("blank.jpg")
-    font = ImageFont.truetype("font/Anonymous_Pro/AnonymousPro-Regular.ttf", 30)
+    font = ImageFont.truetype("font/Anonymous_Pro/AnonymousPro-Regular.ttf", 34)
 
     draw = ImageDraw.Draw(img)
 

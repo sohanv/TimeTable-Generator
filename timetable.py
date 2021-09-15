@@ -2,7 +2,6 @@ import itertools as it
 import random
 from tabulate import TableFormat, tabulate
 from image_gen import gen_img as img
-from draw_table import image_draw as mage
 
 days = int(input('enter number of working days - '))
 n = int(input('enter number of subjects - '))
