@@ -1,5 +1,5 @@
 from tkinter import * #importing tkinter
-#from PIL import ImageTk, Image
+from PIL import ImageTk, Image
 
 #root window
 root = Tk()
@@ -8,15 +8,17 @@ root.configure(bg = 'black')
 #root.iconbitmap("nameoffile.ico")
 #root.attributes('-fullscreen', True)
 
+timetable_img = ImageTk.PhotoImage(Image.open("blank.jpg"))
+
 #functions
 def display_timetable(): #function to open a pop-up window
     pop_up = Toplevel()
     pop_up.title('Timetable Generator')
     pop_up.configure(bg = 'black')
     pop_up.grid
-    #timetable_img = ImageTk.PhotoImage(Image.open(""))
-    #image_label = Label(image = timetable_img)
-    #image_label.pack()
+    #timetable_img = ImageTk.PhotoImage(Image.open("kumblus.jpg"))
+    image_label = Label(pop_up, image = timetable_img)
+    image_label.grid(row = 0, column = 0)
 
 #Labels and all that, 'na mean?
 daysLabel = Label(root, text = 'Enter number of days')
