@@ -3,10 +3,10 @@ import random
 from tabulate import TableFormat, tabulate
 from image_gen import gen_img as img
 
-def timetable_main(days,subject_n,var):
-    subjects = []
-    for i in range(n):
-        subjects.append(input('enter subject - '))
+def timetable_main(days,subject_n,subjects):
+    #subjects = []
+    #for i in range(n):
+    #    subjects.append(input('enter subject - '))
 
     perm = list(it.permutations(subjects))  # all possible arrangements of periods in a list
     if len(perm)<days:
@@ -14,19 +14,18 @@ def timetable_main(days,subject_n,var):
 
     days_of_the_week = ["Monday", "Tuesday", "Wednesday","Thursday","Friday"]
     head = ["Day"]
-    for i in range(1,n+1):
+    for i in range(1,subject_n + 1):
         head.append(i)
 
-    for i in range(m):
-        final = random.sample(perm,days) # choosing 5 random arrangments (depending on number of working days)
-        for j in range(days):
-            final[j] = (days_of_the_week[j],)+final[j]
+    
+    final = random.sample(perm,days) # choosing 5 random arrangments (depending on number of working days)
+    for j in range(days):
+        final[j] = (days_of_the_week[j],)+final[j]
 
-        table = tabulate(final, headers= head, tablefmt="grid")
-        img(table)
+    table = tabulate(final, headers= head, tablefmt="grid")
+    img(table)
 
-days = int(input('enter number of working days - '))
-n = int(input('enter number of subjects - '))
-m = int(input('how many timetable variations do you want? '))
+# days = int(input('enter number of working days - '))
+# n = int(input('enter number of subjects - '))
 
-timetable_main(days,n,m)
+#timetable_main(days,n)
