@@ -1,8 +1,5 @@
-from ctypes import alignment
-from tkinter import *
-from turtle import right #importing tkinter
+from tkinter import * #importing tkinter
 from PIL import ImageTk, Image
-from numpy import left_shift
 from timetable import timetable_main as tt
 from subjects_file import enter, export
 from download import download_button
