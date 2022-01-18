@@ -1,0 +1,6 @@
+INSTRUCTIONS:
+1. Click on the 'Instructions' button to open the instructions of usage.
+2. Enter relevant details(i.e. number of days and name of subjects) in the appropriate input fields.
+3. Click on the 'Generate Timetable' button in order to open the created timetable in a pop-up box.
+4. Click on the 'Download Timetable to Desktop' button in order to save the created timetable onto your Desktop.
+5. Click on the 'QUIT' button to close the application.
