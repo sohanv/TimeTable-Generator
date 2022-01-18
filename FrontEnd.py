@@ -9,8 +9,6 @@ root.configure(bg = 'black')
 #root.iconbitmap("nameoffile.ico")
 #root.attributes('-fullscreen', True)
 
-#timetable_img = ImageTk.PhotoImage(Image.open("pjr_ded.jpg"))
-
 #functions
 def display_timetable(): #function to open a pop-up window
     global timetable_img
@@ -19,7 +17,6 @@ def display_timetable(): #function to open a pop-up window
     pop_up.title('Timetable Generator')
     pop_up.configure(bg = 'black')
     pop_up.grid
-    #timetable_img = ImageTk.PhotoImage(Image.open("pjr_ded.jpg"))
     image_label = Label(pop_up, image = timetable_img)
     image_label.grid(row = 0, column = 0)
 
