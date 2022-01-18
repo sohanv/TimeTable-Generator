@@ -42,6 +42,7 @@ def display_instructions():
     pop_up2.configure(bg = 'black')
     pop_up2.grid()
     f = open('Instructions.txt', 'r')
+    global text_label
     text_label = Label(pop_up2, text = f.read())
     
 #Labels and all that, 'na mean?
