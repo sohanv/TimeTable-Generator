@@ -1,12 +1,7 @@
-#from ctypes import alignment
-from tkinter import *
-#from turtle import right #importing tkinter
+from tkinter import *  #importing tkinter
 from PIL import ImageTk, Image
-#from numpy import left_shift
 from timetable import timetable_main as tt
-from subjects_file import enter, export
 from download import download_button
-import os
 
 #root window
 root = Tk()
@@ -23,12 +18,9 @@ def display_timetable(): #function to open a pop-up window
     pop_up.grid()
 
     days = int(daysEntry.get())     # sohan added
-    #periods = int(periodsEntry.get())
     subjects = (subjectsEntry.get()).split(',')
-    enter(subjects)
-    subjects_retrieved = export()
-    periods = len(subjects_retrieved)
-    tt(days,periods,subjects_retrieved)
+    periods = len(subjects)
+    tt(days,periods,subjects)
 
     global timetable_img
     timetable_img = ImageTk.PhotoImage(Image.open("tt-new.jpg"))
@@ -43,30 +35,31 @@ def display_instructions():
     pop_up2.grid()
     f = open('Instructions.txt', 'r')
     global text_label
-    text_label = Label(pop_up2, text = f.read())
+    text_label = Label(pop_up2, text = f.read(), fg = 'white', bg = 'black', font = ('Arial', 12))
+    text_label.grid(row = 1, column = 1)
     
 #Labels and all that, 'na mean?
-daysLabel = Label(root, text = 'Enter number of days', fg = 'white', bg = 'black')
+daysLabel = Label(root, text = 'Enter number of days:', fg = 'white', bg = 'black', font = ("proxima nova", 12))
 
 #periodsLabel = Label(root, text = 'Enter number of periods per day')
 
-subjectsLabel = Label(root, text = 'Enter the subjects seperated by a comma', fg = 'white', bg = 'black') # sohan added
+subjectsLabel = Label(root, text = 'Enter the subjects seperated by a comma:', fg = 'white', bg = 'black', font = ("proxima nova", 12)) # sohan added
 
 #Buttons
-generate = Button(root, text = 'Generate Timetable', bg = 'green', fg = 'white', command = display_timetable)
+generate = Button(root, text = 'Generate Timetable', bg = 'green', fg = 'white', font = ("uni sans",12), command = display_timetable)
 
-download = Button(root, text = 'Download TimeTable to Desktop', bg = 'green', fg = 'white', command = download_button)
+download = Button(root, text = 'Download TimeTable to Desktop', bg = 'green', fg = 'white', font = ("uni sans",12), command = download_button)
 
-quit = Button(root, text = '                       QUIT                       ', bg = 'red', fg = 'white', command = root.destroy)
+quit = Button(root, text = '                       QUIT                       ', bg = 'red', fg = 'white', font = ("uni sans",12), command = root.destroy)
 
-instructions = Button(root, text = '       Instructions       ', bg = 'green', fg = 'white', command = display_instructions)
+instructions = Button(root, text = '       Instructions       ', bg = 'green', fg = 'white', font = ("uni sans",12), command = display_instructions)
 
 #taking input 
-daysEntry = Entry(root, text = 'Enter number of days', width = 12, fg = 'black', bg = 'grey', bd = 5)
+daysEntry = Entry(root, text = 'Enter number of days', width = 25, fg = 'black', bg = 'grey', bd = 5)
 
 #periodsEntry = Entry(root, text = 'Enter number of periods per day', width = 12, fg = 'black', bg = 'grey', bd = 5)
 
-subjectsEntry = Entry(root, text = 'Enter the subjects seperated by a comma', width = 12, fg = 'black', bg = 'grey', bd = 5) # sohan added
+subjectsEntry = Entry(root, text = 'Enter the subjects seperated by a comma', width = 25, fg = 'black', bg = 'grey', bd = 5) # sohan added
 
 #formatting the page
 daysLabel.grid(row = 0, column = 0)
