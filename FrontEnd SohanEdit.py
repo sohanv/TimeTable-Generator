@@ -48,18 +48,18 @@ subjectsLabel = Label(root, text = 'Enter the subjects seperated by a comma:', f
 #Buttons
 generate = Button(root, text = 'Generate Timetable', bg = 'green', fg = 'white', font = ("uni sans",12), command = display_timetable)
 
-download = Button(root, text = 'Download TimeTable to Desktop', bg = 'green', fg = 'white', font = ("uni sans",12), command = download_button)
+download = Button(root, text = 'Download TimeTable to Desktop',width = 25,  bg = 'green', fg = 'white', font = ("uni sans",12), command = download_button)
 
-quit = Button(root, text = '                       QUIT                       ', bg = 'red', fg = 'white', font = ("uni sans",12), command = root.destroy)
+quit = Button(root, text = 'QUIT', width = 25, bg = 'red', fg = 'white', font = ("uni sans",12), command = root.destroy)
 
 instructions = Button(root, text = '       Instructions       ', bg = 'green', fg = 'white', font = ("uni sans",12), command = display_instructions)
 
 #taking input 
-daysEntry = Entry(root, text = 'Enter number of days', width = 25, fg = 'black', bg = 'grey', bd = 5)
+daysEntry = Entry(root, text = 'Enter number of days', width = 25, fg = 'black', bg = 'grey', bd = 5, font = ('Arial',12))
 
 #periodsEntry = Entry(root, text = 'Enter number of periods per day', width = 12, fg = 'black', bg = 'grey', bd = 5)
 
-subjectsEntry = Entry(root, text = 'Enter the subjects seperated by a comma', width = 25, fg = 'black', bg = 'grey', bd = 5) # sohan added
+subjectsEntry = Entry(root, text = 'Enter the subjects seperated by a comma', width = 25, fg = 'black', bg = 'grey', bd = 5, font = ('Arial',12)) # sohan added
 
 #formatting the page
 daysLabel.grid(row = 0, column = 0)
