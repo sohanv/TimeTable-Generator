@@ -46,13 +46,13 @@ daysLabel = Label(root, text = 'Enter number of days:', fg = 'white', bg = 'blac
 subjectsLabel = Label(root, text = 'Enter the subjects seperated by a comma:', fg = 'white', bg = 'black', font = ("proxima nova", 12)) # sohan added
 
 #Buttons
-generate = Button(root, text = 'Generate Timetable', bg = 'green', fg = 'white', font = ("uni sans",12), command = display_timetable)
+generate = Button(root, text = 'Generate Timetable', width = 25, bg = 'green', fg = 'white', font = ("uni sans",12), command = display_timetable)
 
 download = Button(root, text = 'Download TimeTable to Desktop',width = 25,  bg = 'green', fg = 'white', font = ("uni sans",12), command = download_button)
 
 quit = Button(root, text = 'QUIT', width = 25, bg = 'red', fg = 'white', font = ("uni sans",12), command = root.destroy)
 
-instructions = Button(root, text = '       Instructions       ', bg = 'green', fg = 'white', font = ("uni sans",12), command = display_instructions)
+instructions = Button(root, text = 'Instructions', width = 25, bg = 'green', fg = 'white', font = ("uni sans",12), command = display_instructions)
 
 #taking input 
 daysEntry = Entry(root, text = 'Enter number of days', width = 25, fg = 'black', bg = 'grey', bd = 5, font = ('Arial',12))
@@ -64,7 +64,7 @@ subjectsEntry = Entry(root, text = 'Enter the subjects seperated by a comma', wi
 #formatting the page
 daysLabel.grid(row = 0, column = 0)
 
-daysEntry.grid(row = 0, column = 1, padx = 35, pady = 10, columnspan = 3)
+daysEntry.grid(row = 0, column = 1, padx = 35, pady = 10, columnspan = 1)
 
 #periodsLabel.grid(row = 1, column = 0)
 
@@ -72,11 +72,11 @@ daysEntry.grid(row = 0, column = 1, padx = 35, pady = 10, columnspan = 3)
 
 subjectsLabel.grid(row = 1, column = 0)
 
-subjectsEntry.grid(row = 1, column = 1, padx = 35, pady = 10, columnspan = 3)
+subjectsEntry.grid(row = 1, column = 1, padx = 35, pady = 10, columnspan = 1)
 
 instructions.grid(row = 3, column = 0, padx = 20, pady = 20, columnspan = 1)
 
-generate.grid(row = 2, column = 0, padx = 20, pady = 10, columnspan = 1)
+generate.grid(row = 2, column = 0, padx = 20, pady = 20, columnspan = 1)
 
 download.grid(row = 2, column = 1, padx = 20, pady = 20, columnspan = 1)
 

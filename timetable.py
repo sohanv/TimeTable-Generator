@@ -1,6 +1,6 @@
 import itertools as it
 import random
-from tabulate import TableFormat, tabulate
+from tabulate import tabulate
 from image_gen import gen_img as img
 
 def timetable_main(days,subject_n,subjects):
