@@ -2,6 +2,7 @@ from tkinter import *  #importing tkinter
 from PIL import ImageTk, Image
 from timetable import timetable_main as tt
 from download import download_button
+import os.path
 
 #root window
 root = Tk()
@@ -29,7 +30,7 @@ def display_timetable(): #function to open a pop-up window
 
         global timetable_img
         timetable_img = ImageTk.PhotoImage(Image.open("tt-new.jpg"))
-        
+            
         image_label = Label(pop_up, image = timetable_img)
         image_label.grid(row = 0, column = 0)
 

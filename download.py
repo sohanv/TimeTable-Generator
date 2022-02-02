@@ -8,5 +8,3 @@ def download_button():
     complete_name = os.path.join(os.path.expanduser('~'),'Desktop', file_name)
 
     img.save(complete_name)
-
-download_button()
