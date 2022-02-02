@@ -12,31 +12,46 @@ root.configure(bg = 'black')
 
 #functions
 def display_timetable(): #function to open a pop-up window
-    pop_up = Toplevel()
-    pop_up.title('Timetable Generator')
-    pop_up.configure(bg = 'black')
-    pop_up.grid()
 
     days = int(daysEntry.get())     # sohan added
     subjects = (subjectsEntry.get()).split(',')
     periods = len(subjects)
-    tt(days,periods,subjects)
 
-    global timetable_img
-    timetable_img = ImageTk.PhotoImage(Image.open("tt-new.jpg"))
-    
-    image_label = Label(pop_up, image = timetable_img)
-    image_label.grid(row = 0, column = 0)
+    if days > 7:
+        display_error()
+    else:
+        pop_up = Toplevel()
+        pop_up.title('Timetable Generator')
+        pop_up.configure(bg = 'black')
+        pop_up.grid()
+
+        tt(days,periods,subjects)
+
+        global timetable_img
+        timetable_img = ImageTk.PhotoImage(Image.open("tt-new.jpg"))
+        
+        image_label = Label(pop_up, image = timetable_img)
+        image_label.grid(row = 0, column = 0)
 
 def display_instructions():
     pop_up2 = Toplevel()
     pop_up2.title('Timetable Generator Instructions')
     pop_up2.configure(bg = 'black')
     pop_up2.grid()
-    f = open('Instructions.txt', 'r')
+    f1 = open('Instructions.txt', 'r')
     global text_label
-    text_label = Label(pop_up2, text = f.read(), fg = 'white', bg = 'black', font = ('Arial', 12))
+    text_label = Label(pop_up2, text = f1.read(), fg = 'white', bg = 'black', font = ('Arial', 12))
     text_label.grid(row = 1, column = 1)
+
+def display_error():
+    pop_up3 = Toplevel()
+    pop_up3.title('Error Message!')
+    pop_up3.configure(bg = "black")
+    pop_up3.grid()
+    f2 = open('error.txt','r')
+    global text_label2
+    text_label2 = Label(pop_up3, text = f2.read(), fg = "white", bg = "black", font = ('Arial', 12))
+    text_label2.grid(row = 1, column = 1)
     
 #Labels and all that, 'na mean?
 daysLabel = Label(root, text = 'Enter number of days:', fg = 'white', bg = 'black', font = ("proxima nova", 12))

@@ -12,7 +12,7 @@ def timetable_main(days,subject_n,subjects):
     if len(perm)<days:
         perm *= days
 
-    days_of_the_week = ["Monday", "Tuesday", "Wednesday","Thursday","Friday"]
+    days_of_the_week = ["Monday", "Tuesday", "Wednesday","Thursday","Friday","Saturday","Sunday"]
     head = ["Day"]
     for i in range(1,subject_n + 1):
         head.append(i)
