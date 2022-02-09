@@ -8,20 +8,18 @@ import os.path
 root = Tk()
 root.title('Timetable Generator')
 root.configure(bg = 'black')
-#root.iconbitmap("ad_cooldude.ico")
-#root.attributes('-fullscreen', True)
 
 #functions
 def display_timetable(): #function to open a pop-up window
 
-    days = int(daysEntry.get())     # sohan added
+    days = int(daysEntry.get())     # recieves values entered by user in the GUI
     subjects = (subjectsEntry.get()).split(',')
     periods = len(subjects)
 
     if days > 7:
         display_error()
     else:
-        pop_up = Toplevel()
+        pop_up = Toplevel()     # pop-up window for timetable
         pop_up.title('Timetable Generator')
         pop_up.configure(bg = 'black')
         pop_up.grid()
@@ -34,7 +32,7 @@ def display_timetable(): #function to open a pop-up window
         image_label = Label(pop_up, image = timetable_img)
         image_label.grid(row = 0, column = 0)
 
-def display_instructions():
+def display_instructions():   #pop-up window for displaying instructions
     pop_up2 = Toplevel()
     pop_up2.title('Timetable Generator Instructions')
     pop_up2.configure(bg = 'black')
@@ -44,7 +42,7 @@ def display_instructions():
     text_label = Label(pop_up2, text = f1.read(), fg = 'white', bg = 'black', font = ('Arial', 12))
     text_label.grid(row = 1, column = 1)
 
-def display_error():
+def display_error():    # pop-up window to display error
     pop_up3 = Toplevel()
     pop_up3.title('Error Message!')
     pop_up3.configure(bg = "black")
@@ -54,10 +52,8 @@ def display_error():
     text_label2 = Label(pop_up3, text = f2.read(), fg = "white", bg = "black", font = ('Arial', 12))
     text_label2.grid(row = 1, column = 1)
     
-#Labels and all that, 'na mean?
+#Labels definitions
 daysLabel = Label(root, text = 'Enter number of days:', fg = 'white', bg = 'black', font = ("proxima nova", 12))
-
-#periodsLabel = Label(root, text = 'Enter number of periods per day')
 
 subjectsLabel = Label(root, text = 'Enter the subjects seperated by a comma:', fg = 'white', bg = 'black', font = ("proxima nova", 12)) # sohan added
 
@@ -73,18 +69,12 @@ instructions = Button(root, text = 'Instructions', width = 25, bg = 'green', fg 
 #taking input 
 daysEntry = Entry(root, text = 'Enter number of days', width = 25, fg = 'black', bg = 'grey', bd = 5, font = ('Arial',12))
 
-#periodsEntry = Entry(root, text = 'Enter number of periods per day', width = 12, fg = 'black', bg = 'grey', bd = 5)
-
 subjectsEntry = Entry(root, text = 'Enter the subjects seperated by a comma', width = 25, fg = 'black', bg = 'grey', bd = 5, font = ('Arial',12)) # sohan added
 
 #formatting the page
 daysLabel.grid(row = 0, column = 0)
 
 daysEntry.grid(row = 0, column = 1, padx = 35, pady = 10, columnspan = 1)
-
-#periodsLabel.grid(row = 1, column = 0)
-
-#periodsEntry.grid(row = 1, column = 1, padx = 10, pady = 10, columnspan = 2)
 
 subjectsLabel.grid(row = 1, column = 0)
 
